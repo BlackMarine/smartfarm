@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-const Section1 = () => {
+const M_section1 = () => {
 
   const [data, setData] = useState('@!#!@#!@# e');
   return (
     <aside className="">
-      <img style={{width:"100%"}} src="img/a_banner_01.png"></img>
+      <img style={{width:"100%"}} src="img/a_mobile_bg01.png"></img>
       {/* <div className="container px-5">
         <div className="row gx-5 justify-content-center">
           <div className="col-xl-8">
@@ -22,4 +22,4 @@ const Section1 = () => {
   )
 };
 
-export default Section1;
+export default M_section1;

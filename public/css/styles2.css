@@ -4034,8 +4034,8 @@ textarea.form-control-lg {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  flex-direction: column;
 }
 .navbar > .container,
 .navbar > .container-fluid,
@@ -11312,8 +11312,8 @@ html {
 
 aside,
 section {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  /* padding-top: 5rem;
+  padding-bottom: 5rem; */
 }
 
 .app-badge {
@@ -11321,8 +11321,8 @@ section {
 }
 
 #mainNav {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  /* padding-top: 1rem;
+  padding-bottom: 1rem; */
   background-color: #fff;
 }
 #mainNav .navbar-brand {
@@ -11340,7 +11340,7 @@ section {
   color: #212529;
 }
 #mainNav .navbar-nav .nav-item .nav-link:hover {
-  color: #6c757d;
+  color: #27ace3;
 }
 #mainNav .navbar-nav .nav-item .nav-link.active {
   color: #2937f0;
