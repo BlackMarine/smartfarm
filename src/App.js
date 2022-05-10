@@ -16,8 +16,8 @@ import { useMediaQuery } from 'react-responsive'
 function App() {
   let [a, setText] = useState('qwe');
 
-  const isDesktop = useMediaQuery({ query: '(min-width: 575px)' })
-  const isMobile = useMediaQuery({ query: '(max-width: 575px)' })
+  const isDesktop = useMediaQuery({ query: '(min-width: 575px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 575px)' });
 
   return (
     <div>
