@@ -8,43 +8,93 @@ import Section2 from './components/section2/Section2.js';
 import Section3 from './components/section3/Section3.js';
 import Section4 from './components/section4/Section4.js';
 import Section5 from './components/section5/Section5.js';
+import Product from "./components/product/Product.js";
 
 import M_section1 from "./components/mobile/m_section1.js";
 
 import { useMediaQuery } from 'react-responsive'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  let [a, setText] = useState('qwe');
 
   const isDesktop = useMediaQuery({ query: '(min-width: 575px)' });
   const isMobile = useMediaQuery({ query: '(max-width: 575px)' });
 
   return (
     <div>
+      <BrowserRouter>
+        <Routes>
 
-      {isDesktop &&
-        <div>
-          <Potato />
-          {a}
-          <button onClick={() => { setText("qwe") }}></button>
-          <Nav />
-          <Section1 />
-          <Header />
-          <Section2 />
-          <Section3 />
-          <Section4 />
-          <Section5 />
-          <Footer />
-        </div>}
+          <Route path="/" element={
+            <div>
+              {isDesktop &&
+                <div>
+                  <Potato />
+                  <Nav />
+                  <Section1 />
+                  <Header />
+                  <Section2 />
+                  <Section3 />
+                  <Section4 />
+                  <Section5 />
+                  <Footer />
+                </div>}
 
-      {isMobile &&
-        <div>
-          You are a mobile phone
-          <Potato />
-          <Nav />
-          <M_section1 />
-        </div>}
+              {isMobile &&
+                <div>
+                  <Potato />
+                  <Nav />
+                  <M_section1 />
+                  <Footer />
+                </div>}
+            </div>
+          }>
+          </Route>
 
+          <Route path="greeting" element={
+            <div>
+              {isDesktop &&
+                <div>
+                  <Potato />
+                  <Nav />
+                  <Section3 />
+                  <Footer />
+                </div>}
+
+              {isMobile &&
+                <div>
+                  <Potato />
+                  <Nav />
+                  <M_section1 />
+                  <Footer />
+                </div>}
+            </div>
+          }>
+          </Route>
+
+          <Route path="product" element={
+            <div>
+              {isDesktop &&
+                <div>
+                  <Potato />
+                  <Nav />
+                  <Footer />
+                  <Product />
+                </div>}
+
+              {isMobile &&
+                <div>
+                  <Potato />
+                  <Nav />
+                  <M_section1 />
+                  <Footer />
+                </div>}
+            </div>
+          }>
+          </Route>
+
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

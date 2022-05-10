@@ -85,6 +85,7 @@ const Section2 = () => {
           </div>
         </div>
       </div>
+      ㅂㅈㄷㅈㅂㄷㅂㅈㅂㅈㄷㅂㅈ
     </section>
   )
 };

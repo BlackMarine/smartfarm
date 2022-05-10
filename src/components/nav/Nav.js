@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
+import { Link } from "react-router-dom";
 import "./styleNav.css";
 
 const Nav = () => {
@@ -34,9 +35,11 @@ const Nav = () => {
         onMouseOver={() => setIsHovering(1)}
         onMouseOut={() => setIsHovering(0)}
       >
-        <a className="navbar-brand fw-bold" href="#page-top">
-          <img style={{ width: "100%" }} src="img/a_logo.png"></img>
-        </a>
+        <Link to="/">
+          <a className="navbar-brand fw-bold" href="#page-top">
+            <img style={{ width: "100%" }} src="img/a_logo.png"></img>
+          </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -55,7 +58,12 @@ const Nav = () => {
               <a className="nav-link" href="#features">
                 <div
                   onClick={() => {
-                    setIsTapClick01(!isTapClick01);
+                    if(isMobileTap){
+                      setIsTapClick01(true);
+                      setIsTapClick02(false);
+                      setIsTapClick03(false);
+                      setIsTapClick04(false);
+                    }
                   }}
                 >
                   회사소개
@@ -76,7 +84,12 @@ const Nav = () => {
               <a className="nav-link" href="#download">
                 <div
                   onClick={() => {
-                    setIsTapClick02(!isTapClick02);
+                    if(isMobileTap){
+                      setIsTapClick01(false);
+                      setIsTapClick02(true);
+                      setIsTapClick03(false);
+                      setIsTapClick04(false);
+                    }
                   }}
                 >
                   주요사업
@@ -93,7 +106,12 @@ const Nav = () => {
               <a className="nav-link" href="#download">
                 <div
                   onClick={() => {
-                    setIsTapClick03(!isTapClick03);
+                    if(isMobileTap){
+                      setIsTapClick01(false);
+                      setIsTapClick02(false);
+                      setIsTapClick03(true);
+                      setIsTapClick04(false);
+                    }
                   }}
                 >
                   제품소개
@@ -111,7 +129,12 @@ const Nav = () => {
               <a className="nav-link" href="#download">
                 <div
                   onClick={() => {
-                    setIsTapClick04(!isTapClick04);
+                    if(isMobileTap){
+                      setIsTapClick01(false);
+                      setIsTapClick02(false);
+                      setIsTapClick03(false);
+                      setIsTapClick04(true);
+                    }
                   }}
                 >
                   커뮤니티
@@ -139,51 +162,51 @@ const Nav = () => {
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ms-auto me-4 my-3 my-lg-0">
               <li className="nav-item item-width">
-                <a className="nav-link" href="#features">
-                  <div className="item-font">CEO 인사말</div>
-                </a>
-                <a className="nav-link" href="#features">
-                  <div className="item-font">회사연혁</div>
-                </a>
-                <a className="nav-link" href="#features">
-                  <div className="item-font">조직도</div>
-                </a>
-                <a className="nav-link" href="#features">
-                  <div className="item-font">인증내역</div>
-                </a>
-                <a className="nav-link" href="#features">
-                  <div className="item-font">오시는길</div>
-                </a>
+                <Link to="/greeting">
+                  <div className="nav-link item-font">CEO 인사말</div>
+                </Link>
+                <Link to="#">
+                  <div className="nav-link item-font">회사연혁</div>
+                </Link>
+                <Link to="#">
+                  <div className="nav-link item-font">조직도</div>
+                </Link>
+                <Link to="#">
+                  <div className="nav-link item-font">인증내역</div>
+                </Link>
+                <Link to="#">
+                  <div className="nav-link item-font">오시는길</div>
+                </Link>
               </li>
 
               <li className="nav-item item-width">
-                <a className="nav-link" href="#download">
-                  <div className="item-font">우리사업</div>
-                </a>
+                <Link to="#">
+                  <div className="nav-link item-font">우리사업</div>
+                </Link>
               </li>
 
               <li className="nav-item item-width">
-                <a className="nav-link" href="#download">
-                  <div className="item-font">제품1</div>
-                </a>
-                <a className="nav-link" href="#download">
-                  <div className="item-font">제품2</div>
-                </a>
+                <Link to="/product">
+                  <div className="nav-link item-font">제품1</div>
+                </Link>
+                <Link to="#">
+                  <div className="nav-link item-font">제품2</div>
+                </Link>
               </li>
 
               <li className="nav-item item-width">
-                <a className="nav-link" href="#download">
-                  <div className="item-font">공지사항</div>
-                </a>
-                <a className="nav-link" href="#download">
-                  <div className="item-font">설치사례</div>
-                </a>
-                <a className="nav-link" href="#download">
-                  <div className="item-font">자료실</div>
-                </a>
-                <a className="nav-link" href="#download">
-                  <div className="item-font">제품사용매뉴얼</div>
-                </a>
+                <Link to="#">
+                  <div className="nav-link item-font">공지사항</div>
+                </Link>
+                <Link to="#">
+                  <div className="nav-link item-font">설치사례</div>
+                </Link>
+                <Link to="#">
+                  <div className="nav-link item-font">자료실</div>
+                </Link>
+                <Link to="#">
+                  <div className="nav-link item-font">제품사용매뉴얼</div>
+                </Link>
               </li>
             </ul>
           </div>
