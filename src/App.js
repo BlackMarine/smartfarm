@@ -3,7 +3,9 @@ import React, { useState } from "react";
 import Nav from './components/nav/Nav.js';
 import Header from './components/header/Header.js';
 import Footer from './components/footer/Footer.js';
-import Section1 from './components/section1/Section1.js';
+
+import Main from "./components/main/main.js";
+
 import Section2 from './components/section2/Section2.js';
 import Section3 from './components/section3/Section3.js';
 import Section4 from './components/section4/Section4.js';
@@ -31,12 +33,12 @@ function App() {
                 <div>
                   <Potato />
                   <Nav />
-                  <Section1 />
-                  <Header />
-                  <Section2 />
+                  <Main/>
+
+                  {/* <Section2 />
                   <Section3 />
                   <Section4 />
-                  <Section5 />
+                  <Section5 /> */}
                   <Footer />
                 </div>}
 
@@ -77,6 +79,7 @@ function App() {
               {isDesktop &&
                 <div>
                   <Potato />
+                  <Potato />
                   <Nav />
                   <Footer />
                   <Product />
@@ -100,7 +103,7 @@ function App() {
 }
 
 function Potato() {
-  return <div style={{ height: "72.25px" }}></div>;
+  return <div style={{ height: "114px", backgroundColor: "gray" }}></div>;
 }
 
 export default App;

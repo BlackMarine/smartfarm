@@ -27,7 +27,6 @@ const Nav = () => {
         <div className="container" style={{ color: "red" }}>
           <div style={{ right: "2px" }}>asdas</div>
         </div>
-        blackBar
       </div>
 
       <div
